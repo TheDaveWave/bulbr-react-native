@@ -1,37 +1,15 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import Info from "./src/components/Info";
-import Home from "./src/components/Home";
-import Settings from "./src/components/Settings";
-
-const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
+import BottomTabs from "./src/components/navigators/BottomTabs";
+import StackNavigator from "./src/components/navigators/StackNavigator";
 
 export default function App() {
   return (
-    <>
-      {/*  <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Home"
-          screenOptions={{
-            headerTransparent: false,
-          }}
-        >
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Info" component={Info} />
-        </Stack.Navigator>
-      </NavigationContainer> */}
-      <NavigationContainer>
-        <Tab.Navigator>
-          <Tab.Screen name="Home" component={Home} />
-          <Tab.Screen name="Info" component={Info} />
-          <Tab.Screen name ="Settings" component={Settings} />
-        </Tab.Navigator>
-      </NavigationContainer>
-    </>
+    <NavigationContainer>
+      {/* <StackNavigator /> */}
+      <BottomTabs />
+    </NavigationContainer>
   );
 }
 
